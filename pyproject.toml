@@ -1,0 +1,16 @@
+[project]
+name = "fastapi-masterclass"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "bcrypt>=4.3.0",
+    "fastapi>=0.115.13",
+    "passlib>=1.7.4",
+    "python-jose>=3.5.0",
+    "python-multipart>=0.0.20",
+    "sqlalchemy>=2.0.41",
+    "uvicorn>=0.34.3",
+]
