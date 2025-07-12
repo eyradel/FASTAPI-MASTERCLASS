@@ -9,7 +9,7 @@ from db import db_article
 router = APIRouter(prefix='/article',tags=['article'])
 
 @router.post('/',response_model=ArticleDisplay)
-def create_article(request:ArticleBase,db:Session=Depends(get_db)):
+def create_article(request:ArticleBase,db:Session=Depends(get_db),token=Depends(oauth2_scheme)):
     return db_article.create_article(db,request)
 
 

@@ -37,7 +37,7 @@ def create_comment(blog:BlogModel,id:int,comment_id:int=Query
                     description='Some description for comment_id',
                     alias='comment Id',
                     deprecated=True
-                ),content:str=Body(...,min_length=10,max_length=50,regex='^[a-z\s]*$'),v:Optional[List[str]]=Query(['1','3','2'])):
+                ),content:str=Body(...,min_length=10,max_length=50,pattern='^[a-z\s]*$'),v:Optional[List[str]]=Query(['1','3','2'])):
     return {
         'blog':blog,
         'id':id,

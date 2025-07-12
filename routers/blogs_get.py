@@ -19,7 +19,7 @@ def get_comment(id:int,comment_id:int,valid:bool=True,username:Optional[str]=Non
     """
     return {'message': f'blog_id {id}, comment_id {comment_id}, username {username}'}
 
-@router.get('/blog/all',tags=['blog'],summary='retrieve all blogs',description='gets all blogs', response_description='get all blogs')
+@router.get('/all',tags=['blog'],summary='retrieve all blogs',description='gets all blogs', response_description='get all blogs')
 def get_all_blogs(page:int=1,page_size:Optional[int]=None,req_paramter:dict=Depends(required_functionality)):
     return {
         'message':f'All {page_size} blogs on page {page}',
