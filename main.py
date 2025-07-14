@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse,PlainTextResponse,RedirectResponse,HT
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 from enum import Enum
-from routers import blogs_get,blog_post,user,article,product,file
+from routers import blogs_get,blog_post,user,article,product,file,dependencies
 from db import models
 from templates import templates
 from db.database import engine
@@ -19,7 +19,7 @@ app = FastAPI()
 
 clients = []
 
-
+app.include_router(dependencies.router)
 app.include_router(templates.router)
 app.include_router(authentication.router) 
 app.include_router(blogs_get.router)
